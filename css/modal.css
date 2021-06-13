@@ -1,0 +1,139 @@
+/* .vmodal {} */
+
+.container{
+    margin-top: 10px;
+}
+
+/* Логика для JS (Когда вызывается класс open - делать это ...) */
+.vmodal.open .modal-overlay,
+.vmodal.open .modal-window { 
+    opacity: 1;
+    z-index: 1000;
+}
+
+/* Анимация закрытия */
+.vmodal.hide .modal-overlay,
+.vmodal.hide .modal-window { 
+    opacity: 1;
+    z-index: 1000;
+}
+
+.vmodal.open .modal-window {
+    transform: translateY(100px); /*Вернуть позицию окну при вызове метода open относительно положения 0px по высоте*/ 
+}
+
+.vmodal.open .modal-overlay {
+    background: rgba(0, 0, 0, .5); /*Изменить цвет при вызове метода open*/ 
+}
+
+.vmodal.hide .modal-window {
+    transform: translateY(-200px); /*Ставим дефолтные значения для анимации закрытия*/ 
+}
+
+.vmodal.hide .modal-overlay {
+    background: rgba(0, 0, 0, 0); /*Ставим дефолтные значения для анимации закрытия*/ 
+}
+
+
+.modal-window, .modal-overlay {
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background .2s ease-in; /*Изменения свойств у background*/
+}
+
+.modal-window {
+    width: 600px;
+    border-radius: 5px;
+    background: #fff;
+    margin: 0 auto;
+    transform: translateY(-200px); /*Для нахождения окна вне экрана по оси Y*/
+    transition: transform .2s ease-in; /*Плавное изменение положения окна*/
+}
+
+.modal-header {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+
+}
+
+.modal-close { 
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 10px;
+}
+
+.modal-body p {
+    margin: 0 0 5px;
+}
+
+.modal-footer {
+    padding: 5px 10px;
+    border-top: 1px solid #eee;
+
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    margin-right: 120px;
+    cursor: pointer;
+
+    padding: 0 10px;
+    color: #fff;
+    background: linear-gradient(90deg, #1dfc6f 0%, #6fe937 100%);
+    border: none;
+}
+
+.btn-danger {
+    border-radius: 5px;
+    cursor: pointer;
+
+    padding: 0 10px;
+    color: #fff;
+    background-color: #aa0909;
+    border: none;
+}
+
+.modal-input {
+    position: relative;
+    left: 45px;
+}
+
+.input-primary {
+    border: 1px solid #aa0909;
+    
+}
+
+.input {
+    margin: 5px;
+    width: 40%;
+    height: 25px;
+
+    border-radius: none;
+}
+
+
+
+
+
+
